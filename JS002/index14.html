@@ -37,16 +37,6 @@
       const intNum2 = Number(inputNum2.value);
       const txtOp = op.value;
 
-      if (txtOp === "+") {
-        result.innerText = intNum1 + intNum2;
-      } else if (txtOp === "-") {
-        result.innerText = intNum1 - intNum2;
-      } else if (txtOp === "*") {
-        result.innerText = intNum1 * intNum2;
-      } else if (txtOp === "!") {
-        result.innerText = intNum1 / intNum2;
-      }
-
       if (!intNum1) {
         alert("num1 값을 입력하세요");
         inputNum1.focus();
@@ -57,6 +47,16 @@
         alert("num2 값을 입력하세요");
         inputNum2.focus();
         return false;
+      }
+
+      if (txtOp === "+") {
+        result.innerText = intNum1 + intNum2;
+      } else if (txtOp === "-") {
+        result.innerText = intNum1 - intNum2;
+      } else if (txtOp === "*") {
+        result.innerText = intNum1 * intNum2;
+      } else if (txtOp === "!") {
+        result.innerText = intNum1 / intNum2;
       }
 
       inputNum1.value = "";
