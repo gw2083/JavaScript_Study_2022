@@ -16,7 +16,9 @@ mainNav?.addEventListener("click", (tag) => {
       document.location.href = "https://naver.com";
     } else if (text === "다음") {
       //새로운 창을 열고 다음창을 가져와서 보여라
-      window.open = "https://daum.net";
+      window.open("https://daum.net");
+    } else if (text === "About") {
+      document.location.href = "sub/about07.html";
     }
   }
 });

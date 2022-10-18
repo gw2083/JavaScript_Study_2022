@@ -60,6 +60,30 @@
         text-align: center;
         padding: 0.5em;
       }
+
+      /* 2개 이상의 tag 에 공통 style 부여하기 */
+      form label,
+      form input {
+        /* inline tag 인 label 과 input 을 inline-block 으로 변경 */
+        display: inline-block;
+        margin: 5px;
+        padding: 8px;
+      }
+      form label {
+        width: 30%;
+        text-align: right;
+        color: rgb(45, 45, 112);
+        font-weight: bold;
+      }
+      form input {
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #777;
+      }
+      /* input box 에 마우스 클릭했을 때*/
+      form input:focus {
+        background-color: #bbb;
+      }
     </style>
   </head>
   <body>
@@ -77,14 +101,37 @@
       </ul>
     </nav>
     <section>
-      <article>우리나라만세</article>
-      <article>대한민국만세</article>
-      <article>Republic of Korea</article>
-      <article>우리나라만세</article>
-      <article>우리나라만세</article>
-      <article>우리나라만세</article>
-      <article>우리나라만세</article>
-      <article>우리나라만세</article>
+      <article>
+        <!--
+          form tag 의 action 속성
+          form tag 에서 submit 이벤트가 발생할때 데이터를 배달할 주소
+          이 주소가 지정되지 않으면 화면만 refresh 된다
+        -->
+        <form
+          class="google"
+          target="_blank"
+          action="https://google.co.kr/search"
+        >
+          <label>구글</label>
+          <input name="q" placeholder="검색어..." />
+        </form>
+        <form
+          class="naver"
+          target="_blank"
+          action="https://search.naver.com/search.naver"
+        >
+          <label>네이버</label>
+          <input name="query" placeholder="검색어..." />
+        </form>
+        <form
+          class="daum"
+          target="_blank"
+          action="https://search.daum.net/search"
+        >
+          <label>다음</label>
+          <input name="q" placeholder="검색어..." />
+        </form>
+      </article>
     </section>
     <footer>
       <address>CopyRight &copy;gw2083@naver.com</address>
