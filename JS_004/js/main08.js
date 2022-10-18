@@ -18,12 +18,15 @@ btnJoin?.addEventListener("click", () => {
   if (!txtName) {
     alert("아이디 입력");
     inputName.focus();
+    return false;
   } else if (!txtPw) {
     alert("비밀번호 입력");
     inputPw.focus();
+    return false;
   } else if (!txtRe) {
     alert("비밀번호 확인");
     inputRe.focus();
+    return false;
   } else if (txtPw !== txtRe) {
     alert("비밀번호 다시 입력");
     inputPw.focus();
