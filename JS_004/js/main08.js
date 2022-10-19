@@ -9,8 +9,6 @@ const btnJoin = document.querySelector("button.btn_submit");
 const inputName = document.querySelector("#username");
 const inputPw = document.querySelector("#password");
 const inputRe = document.querySelector("#re_password");
-const nickname = document.querySelector("#nickname")
-const tel = document.querySelector("#tel")
 
 btnJoin?.addEventListener("click", () => {
   const txtName = inputName.value;
@@ -26,20 +24,12 @@ btnJoin?.addEventListener("click", () => {
     inputPw.focus();
     return false;
   } else if (!txtRe) {
-    alert("비밀번호를 재확인하세요");
+    alert("비밀번호를 확인하세요");
     inputRe.focus();
     return false;
   } else if (txtPw !== txtRe) {
     alert("비밀번호를 다시 입력하세요");
     inputPw.focus();
-    return false
-  } else if(!nickname.value){
-    alert("닉네임을 입력하세요")
-    nickname.focus()
-    return false
-  } else if(!tel.value){
-    alert("전화번호를 입력하세요")
-    tel.focus()
-    return false
+    return false;
   }
 });
