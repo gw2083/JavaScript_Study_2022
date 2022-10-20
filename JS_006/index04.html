@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      header {
+        color: grey;
+        text-align: center;
+        padding: 30px;
+      }
+      table,
+      div {
+        width: 80%;
+        margin: 30px auto;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th {
+        background-color: grey;
+        color: white;
+        padding: 7px;
+      }
+      td {
+        border-top: 1px solid grey;
+        border-bottom: 1px solid grey;
+        padding: 5px;
+      }
+      div.input_box {
+        display: flex;
+      }
+      div.input_box input {
+        flex: 3;
+        margin: 5px;
+        padding: 7px;
+      }
+      div.input_box button {
+        flex: 1;
+        border: none;
+        border-radius: 5px;
+        background-color: grey;
+        color: white;
+        padding: 5px 10px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>나의 친구들</h1>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>주소</th>
+          <th>전화번호</th>
+        </tr>
+      </thead>
+      <tbody class="list"></tbody>
+    </table>
+    <div class="input_box">
+      <input type="text" name="name" placeholder="이름" />
+      <input type="text" name="addr" placeholder="주소" />
+      <input type="tel" name="tel" placeholder="전화번호" />
+      <button class="add">추가</button>
+    </div>
+  </body>
+  <script src="js/main04.js"></script>
+</html>
