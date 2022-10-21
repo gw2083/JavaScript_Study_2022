@@ -45,6 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
     tbodyAddr.appendChild(tr);
   }
 
+  const addrCheck = () => {
+    for (i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+      if (!input.value) {
+        alert("입력");
+        return false;
+      }
+    }
+    return true;
+  };
+
   const addrInput = () => {
     let total =
       Number(inputs[2].value) +
@@ -85,5 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
     tbodyAddr.appendChild(tr);
   };
 
-  btnAdd?.addEventListener("click", addrInput);
+  btnAdd?.addEventListener("click", () => {
+    if (addrCheck()) {
+      addrInput();
+    }
+  });
 });
