@@ -1,104 +1,111 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const btnAdd = document.querySelector("button.add");
-  const inputs = document.querySelectorAll("input");
-  const tbodyAddr = document.querySelector("tbody.addr");
-  let addrList = [];
+document.addEventListener("DOMContentLoaded",()=>{
+    const btnAdd = document.querySelector("button.add")
+    const inputs = document.querySelectorAll("input")
+    const tbodyAddr = document.querySelector("tbody.addr")
+    let scoerList =[]
 
-  const strAddr = localStorage.getItem("myaddr");
-  addrList = JSON.parse(strAddr);
+    const scoreLoad = () => {
+        const strScore = localStorage.getItem("myscore")
+        scoerList = JSON.parse(strScore)
+        if(!scoerList){
+            scoerList=[]
+            return false
+        }
+        for(let i = 0 ; i < scoerList.length ; i++){
+            const tr = document.createElement("TR")
+            let td = document.createElement("TD")
+            td.textContent = scoerList[i].number
+            tr.appendChild(td)
 
-  if (!addrList) {
-    addrList = [];
-    return false;
-  }
+            td = document.createElement("TD")
+            td.textContent = scoerList[i].name
+            tr.appendChild(td)
 
-  for (i = 0; i < addrList.length; i++) {
-    const tr = document.createElement("TR");
-    let td = document.createElement("TD");
-    td.textContent = addrList[i].number;
-    tr.appendChild(td);
+            td = document.createElement("TD")
+            td.textContent = scoerList[i].kor
+            tr.appendChild(td)
 
-    td = document.createElement("TD");
-    td.textContent = addrList[i].name;
-    tr.appendChild(td);
+            td = document.createElement("TD")
+            td.textContent = scoerList[i].eng
+            tr.appendChild(td)
 
-    td = document.createElement("TD");
-    td.textContent = addrList[i].kor;
-    tr.appendChild(td);
+            td = document.createElement("TD")
+            td.textContent = scoerList[i].math
+            tr.appendChild(td)
 
-    td = document.createElement("TD");
-    td.textContent = addrList[i].eng;
-    tr.appendChild(td);
+            td = document.createElement("TD")
+            td.textContent = scoerList[i].sum
+            tr.appendChild(td)
 
-    td = document.createElement("TD");
-    td.textContent = addrList[i].math;
-    tr.appendChild(td);
+            td = document.createElement("TD")
+            td.textContent = scoerList[i].avg
+            tr.appendChild(td)
 
-    td = document.createElement("TD");
-    td.textContent = addrList[i].total;
-    tr.appendChild(td);
+            tbodyAddr.appendChild(tr)
+        }
 
-    td = document.createElement("TD");
-    td.textContent = addrList[i].avg;
-    tr.appendChild(td);
-
-    tbodyAddr.appendChild(tr);
-  }
-
-  const addrCheck = () => {
-    for (i = 0; i < inputs.length; i++) {
-      const input = inputs[i];
-      if (!input.value) {
-        alert("입력");
-        return false;
-      }
     }
-    return true;
-  };
+    scoreLoad()
 
-  const addrInput = () => {
-    let total =
-      Number(inputs[2].value) +
-      Number(inputs[3].value) +
-      Number(inputs[4].value);
-    let avg = Math.round(total / 3);
-
-    const addr = {
-      number: inputs[0].value,
-      name: inputs[1].value,
-      kor: inputs[2].value,
-      eng: inputs[3].value,
-      math: inputs[4].value,
-      total: total,
-      avg: avg,
-    };
-
-    addrList.push(addr);
-
-    localStorage.setItem("myaddr", JSON.stringify(addrList));
-
-    const tr = document.createElement("TR");
-
-    for (let i = 0; i < inputs.length; i++) {
-      const td = document.createElement("TD");
-      td.textContent = inputs[i].value;
-      tr.appendChild(td);
+    const scoreCheck = () =>{
+        for(let i = 0 ; i < inputs.length ; i++){
+            if(!inputs[i].value){
+                alert(`${inputs[i].placeholder} 입력하세요`)
+                inputs[i].focus()
+                return false
+            }
+            
+            if(i > 1 & (Number(inputs[i].value) < 0 || Number(inputs[i].value) > 100)) {
+                alert("0 ~ 100 까지의 숫자를 입력하세요")
+                inputs[i].focus()
+                inputs[i].value=""
+                return false
+            }
+        }
+        return true
     }
 
-    let td = document.createElement("TD");
-    td.textContent = total;
-    tr.appendChild(td);
+    const inputScore = ()=>{
+        let sum = 0
+        let avg = 0
+        for(let i = 0 ; i < inputs.length ; i++){
+            if(i > 1){
+                sum += Number(inputs[i].value)
+                avg = Math.round(sum / 3)            
+            }
+        }
+        const score = {
+            number : inputs[0].value,
+            name : inputs[1].value,
+            kor : inputs[2].value,
+            eng : inputs[3].value,
+            math : inputs[4].value,
+            sum : sum,
+            avg : avg
+        }
+        scoerList.push(score)
+        localStorage.setItem("myscore",JSON.stringify(scoerList))
 
-    td = document.createElement("TD");
-    td.textContent = avg;
-    tr.appendChild(td);
+        const tr = document.createElement("TR")
+        for(let i = 0 ; i < inputs.length ; i++) {
+            const td = document.createElement("TD")
+            td.textContent = inputs[i].value
+            tr.appendChild(td)
+        }
+        let td = document.createElement("TD")
+        td.textContent = sum
+        tr.appendChild(td)
 
-    tbodyAddr.appendChild(tr);
-  };
+        td = document.createElement("TD")
+        td.textContent = avg
+        tr.appendChild(td)
 
-  btnAdd?.addEventListener("click", () => {
-    if (addrCheck()) {
-      addrInput();
+        tbodyAddr.append(tr)
     }
-  });
-});
+
+    btnAdd.addEventListener("click", ()=>{
+        if(scoreCheck()){
+            inputScore()
+        }
+    })
+})
