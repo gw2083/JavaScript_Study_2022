@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        width: 100vw;
+        height: 100vh;
+      }
+      body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        padding: 1.2rem;
+        text-align: center;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        background-image: url("images/bg_images_\(4\).jpg");
+        background-size: 100% 100%;
+        background-position: bottom;
+      }
+      nav {
+        background-color: rgb(57, 89, 121);
+        color: white;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+      }
+      /*
+      nav 메뉴에 마우스가 hover 되면 하단에 두꺼운 라인을 형성하여 보여주는 스타일 구현
+      이때 hover 에서 라인을 주면 마우스가 호버되었을 때 메뉴부분이 출렁거리는 현상 발생
+      -> 방지하기 위하여 기본속성에 라인의 굵기만큼 transparent 색상으로 border-bottom 을 설정
+      */
+      li {
+        margin: 8px;
+        padding: 10px 16px 8px 16px;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        font-weight: 900;
+        /*
+        기본 속성에서 hover 속성으로 변화가 일어날 때 딜레이를 주어 조금 부드럽게 변화되도록 하는 기법*/
+        transition: border 0.7s, background-color 1s;
+      }
+      li:hover {
+        border-bottom: 3px solid rgb(216, 216, 203);
+        background-color: #777;
+      }
+      footer {
+        background-color: #777;
+        font-size: 8pt;
+        text-align: center;
+        padding: 0.9em;
+      }
+      section {
+        flex: 1;
+        /*
+        box 크기가 고정된 상태에서 내부의 content 가 box 크기보다 큰 경우
+        overflow 를 지정하면 box 내부에서 content 가 머물도록 할 수 있다
+        hidden : box 보다 넘치는 content 잘라서 보이지 않게
+        scroll : 항상 scroll bar 가 보이도록
+        auto : content 가 넘치는 경우에만 scroll bar 나타나도록
+
+        overflow : width, height 모두 적용
+        overflow-y : height 에만 적용
+        overflow-x : width 에만 적용
+        */
+        overflow-y: auto;
+      }
+      div {
+        width: 50%;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>반갑습니다</h1>
+      <p>나의 홈페이지에 오신 것을 환영합니다</p>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+    <section>
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas quod
+        tempore aliquam? Nostrum a alias illo nemo vero tempora doloribus ab
+        quod distinctio voluptas, culpa ullam repellat deserunt sequi iure?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas quod
+        tempore aliquam? Nostrum a alias illo nemo vero tempora doloribus ab
+        quod distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure? tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?Lorem
+        ipsum dolor sit, amet consectetur adipisicing elit. Quas quod tempore
+        aliquam? Nostrum a alias illo nemo vero tempora doloribus ab quod
+        distinctio voluptas, culpa ullam repellat deserunt sequi iure?
+      </div>
+      <div>
+        모든 국민은 법 앞에 평등하다. 누구든지 성별·종교 또는 사회적 신분에
+        의하여 정치적·경제적·사회적·문화적 생활의 모든 영역에 있어서 차별을 받지
+        아니한다. 헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여
+        국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.
+        선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게
+        부담시킬 수 없다. 공개하지 아니한 회의내용의 공표에 관하여는 법률이
+        정하는 바에 의한다. 사법권은 법관으로 구성된 법원에 속한다. 국회는
+        정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새
+        비목을 설치할 수 없다. 모든 국민은 법 앞에 평등하다. 누구든지 성별·종교
+        또는 사회적 신분에 의하여 정치적·경제적·사회적·문화적 생활의 모든 영역에
+        있어서 차별을 받지 아니한다. 헌법개정안은 국회가 의결한 후 30일 이내에
+        국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을
+        얻어야 한다. 선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당
+        또는 후보자에게 부담시킬 수 없다. 공개하지 아니한 회의내용의 공표에
+        관하여는 법률이 정하는 바에 의한다. 사법권은 법관으로 구성된 법원에
+        속한다. 국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을
+        증가하거나 새 비목을 설치할 수 없다. 모든 국민은 법 앞에 평등하다.
+        누구든지 성별·종교 또는 사회적 신분에 의하여 정치적·경제적·사회적·문화적
+        생활의 모든 영역에 있어서 차별을 받지 아니한다. 헌법개정안은 국회가
+        의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와
+        투표자 과반수의 찬성을 얻어야 한다. 선거에 관한 경비는 법률이 정하는
+        경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다. 공개하지 아니한
+        회의내용의 공표에 관하여는 법률이 정하는 바에 의한다. 사법권은 법관으로
+        구성된 법원에 속한다. 국회는 정부의 동의없이 정부가 제출한 지출예산
+        각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 모든 국민은 법 앞에
+        평등하다. 누구든지 성별·종교 또는 사회적 신분에 의하여
+        정치적·경제적·사회적·문화적 생활의 모든 영역에 있어서 차별을 받지
+        아니한다. 헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여
+        국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.
+        선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게
+        부담시킬 수 없다. 공개하지 아니한 회의내용의 공표에 관하여는 법률이
+        정하는 바에 의한다. 사법권은 법관으로 구성된 법원에 속한다. 국회는
+        정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새
+        비목을 설치할 수 없다. 모든 국민은 법 앞에 평등하다. 누구든지 성별·종교
+        또는 사회적 신분에 의하여 정치적·경제적·사회적·문화적 생활의 모든 영역에
+        있어서 차별을 받지 아니한다. 헌법개정안은 국회가 의결한 후 30일 이내에
+        국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을
+        얻어야 한다. 선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당
+        또는 후보자에게 부담시킬 수 없다. 공개하지 아니한 회의내용의 공표에
+        관하여는 법률이 정하는 바에 의한다. 사법권은 법관으로 구성된 법원에
+        속한다. 국회는 정부의 동의없이 정부가 제출한 지출예산 각항의 금액을
+        증가하거나 새 비목을 설치할 수 없다. 모든 국민은 법 앞에 평등하다.
+        누구든지 성별·종교 또는 사회적 신분에 의하여 정치적·경제적·사회적·문화적
+        생활의 모든 영역에 있어서 차별을 받지 아니한다. 헌법개정안은 국회가
+        의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와
+        투표자 과반수의 찬성을 얻어야 한다. 선거에 관한 경비는 법률이 정하는
+        경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다. 공개하지 아니한
+        회의내용의 공표에 관하여는 법률이 정하는 바에 의한다. 사법권은 법관으로
+        구성된 법원에 속한다. 국회는 정부의 동의없이 정부가 제출한 지출예산
+        각항의 금액을 증가하거나 새 비목을 설치할 수 없다. 모든 국민은 법 앞에
+        평등하다. 누구든지 성별·종교 또는 사회적 신분에 의하여
+        정치적·경제적·사회적·문화적 생활의 모든 영역에 있어서 차별을 받지
+        아니한다. 헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여
+        국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다.
+        선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게
+        부담시킬 수 없다. 공개하지 아니한 회의내용의 공표에 관하여는 법률이
+        정하는 바에 의한다. 사법권은 법관으로 구성된 법원에 속한다. 국회는
+        정부의 동의없이 정부가 제출한 지출예산 각항의 금액을 증가하거나 새
+        비목을 설치할 수 없다.
+      </div>
+      <div>
+        이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는
+        직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지
+        존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를 가진다.
+        이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는
+        직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지
+        존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를
+        가진다.이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에
+        속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될
+        때까지 존속하며 그 직무를 행한다. 신체장애자 및 질병·노령 기타의 사유로
+        생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.
+        의무교육은 무상으로 한다. 예비비는 총액으로 국회의 의결을 얻어야 한다.
+        예비비의 지출은 차기국회의 승인을 얻어야 한다. 제1항의 지시를 받은 당해
+        행정기관은 이에 응하여야 한다. 탄핵결정은 공직으로부터 파면함에 그친다.
+        그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든
+        국민은 법률이 정하는 바에 의하여 국가기관에 문서로 청원할 권리를 가진다.
+      </div>
+    </section>
+    <footer>
+      <address>CopyRight &copy; gw2083@naver.com</address>
+    </footer>
+  </body>
+</html>
