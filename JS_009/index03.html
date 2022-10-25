@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 함수를 선언 : 이 코드는 아무런 반응이 없는 상태, 만들어 놓기만 함
+    function numAdd(num1, num2) {
+      let sum = num1 + num2;
+      return sum;
+    }
+
+    // 함수를 호출 : 비로소 numAdd() 함수가 반응을 할 수 있는 시기
+    // 함수가 호출되면 numAdd() {} 의 코드블럭({}) 내부의 코드가 실행된다
+    let result = numAdd(200, 300);
+
+    // Math 라는 클래스(패키지, 묶음)에 들어있는 random() 함수를 호출하여 그 함수가 return 하는 값을 rndNum 변수에 받겠다(저장해놓겠다)
+    let rndNum = Math.random();
+    rndNum *= 10; // rndNum = rndNum * 10
+
+    /**
+     * Math.floor(rndNum) : rndNum 변수에 저장된 값을 전달 -> 코드({})를 실행하고 그 최종결과를 return 하라는 호출(요청)
+     *
+     * Math.floor()가 return 한 결과를 intRndNum 에 받겠다
+     */
+    let intRndNum = Math.floor(rndNum);
+
+    /**
+     * document 객체(브라우저 화면)에 준비되어있는 writeln() 함수에게 intRndNum 변수에 저장된 값을 전달하고 처리를 하라고 요청
+     * 요청 후 처리된 결과는 소용없음
+     */
+    document.writeln(intRndNum);
+  </script>
+</html>
