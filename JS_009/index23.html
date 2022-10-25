@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        padding: 1em;
+        margin: 10px;
+        display: flex;
+      }
+      section.main {
+        border: 1px solid blue;
+      }
+      section.main div {
+        border: 1px solid #777;
+        padding: 1em;
+        margin: 10px;
+      }
+
+      section.even {
+        border: 1px solid green;
+      }
+      section.even div {
+        border: 1px solid #777;
+        padding: 1em;
+        margin: 10px;
+      }
+
+      section.odd {
+        border: 1px solid red;
+      }
+      section.odd div {
+        border: 1px solid #777;
+        padding: 1em;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main"></section>
+    <section class="even">짝수</section>
+    <section class="odd">홀수</section>
+    <button class="btn">새로고침</button>
+  </body>
+  <script src="js/main23.js"></script>
+</html>
