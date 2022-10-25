@@ -7,8 +7,10 @@
     <style>
       section {
         padding: 1em;
-        margin: 10px;
+        margin: 10px auto;
         display: flex;
+        justify-content: center;
+        width: 80%;
       }
       section.main {
         border: 1px solid blue;
@@ -27,6 +29,11 @@
         padding: 1em;
         margin: 10px;
       }
+      section.even div:nth-of-type(1), section.odd div:nth-of-type(1){
+        border: none;
+        font-weight: bold;
+      }
+
 
       section.odd {
         border: 1px solid red;
@@ -35,6 +42,10 @@
         border: 1px solid #777;
         padding: 1em;
         margin: 10px;
+      }
+      button{
+        display: flex;
+        margin: 20px auto;
       }
     </style>
   </head>
