@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const td = document.createElement("TD");
         td.textContent = 속성;
         tr.appendChild(td);
-      }); // 한 란인에 표시할 학생 정보 완료
+      }); // 한 라인에 표시할 학생 정보 완료
       tbodystInfo.appendChild(tr);
     });
   };
