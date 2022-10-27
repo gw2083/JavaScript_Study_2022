@@ -21,11 +21,19 @@ server.listen(port, host, () => {
 
 app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
+  /**
+   * 텍스트를 여러번 보내고 싶을 때는 write 로 보내고
+   * 제일 마지막에 end 로 마감한다
+   */
   res.setHeader("Content-Type", "text/html;charset=UTF-8");
-  res.end("반갑습니다");
+  res.write("안녕하세요<hr/>");
+  res.write("오늘은 목요일<hr/>");
+  res.end("금요일이면 좋곘네<hr/>");
+
+  res.send("반갑습니다");
 });
 
 app.get("/user", (req, res) => {
-  res.setHeader("Content-Type", "text/html;charset=UTF-8");
-  res.end("안녕하세요");
+  // 한번만 보낼 수 있다
+  res.send("안녕하세요");
 });
